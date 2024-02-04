@@ -1,0 +1,20 @@
+{
+  "name": "logo-maker",
+  "version": "1.0.0",
+  "description": "A Node.js command-line application that takes in user input to generate a logo and saves it as an SVG file",
+  "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.2.6"
+  }
+}
