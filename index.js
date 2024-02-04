@@ -1,8 +1,11 @@
-import Shapes, { Triangle, Square, Circle, renderShape } from './lib/shapes.js';
+// import Shapes, { Triangle, Square, Circle, renderShape } from './lib/shapes.js';
 const inquirer = require('inquirer');
+const fs = require('fs');
+ 
+// const render = require('./lib/shapes.js');
 
-inquirer
-    .prompt({
+const questions = [
+    {
         type: 'list',
         name: 'shape',
         message: 'What shape do you want your logo to be?',
@@ -10,85 +13,101 @@ inquirer
             'Triangle ▲',
             'Square ◼️',
             'Circle ⏺',
-        ]
+        ],
+        filter(val) {
+            string = val.slice(0, -2);
+            return string.toLowerCase();
+        }
     },
-        {
-            type: 'list',
-            name: 'bgcolor',
-            message: 'What color do you want your logo to be?',
-            choices: [
-                'Lilac',
-                'Pale pink',
-                'Periwinkle',
-                'Pale yellow',
-                'Light blue',
-                'Navy',
-                'Cream',
-                'Peach',
-                'Sage green',
-                'Red',
-                'Purple',
-                'Bright pink',
-                'White',
-            ],
-            filter(val) {
-                array = val.split(" ").join("");
-                return array.toLowerCase();
+    {
+        type: 'list',
+        name: 'bgcolor',
+        message: 'What color do you want your logo to be?',
+        choices: [
+            'Lilac',
+            'Pale pink',
+            'Periwinkle',
+            'Pale yellow',
+            'Light blue',
+            'Navy',
+            'Cream',
+            'Peach',
+            'Sage green',
+            'Red',
+            'Purple',
+            'White',
+            'Orange'
+        ],
+        filter(val) {
+            array = val.split(" ").join("");
+            return array.toLowerCase();
+        }
+    },
+    {
+        type: 'input',
+        name: 'text',
+        message: 'Enter the text for your logo (up to 4 characters):',
+        validate(value) {
+            if (value.length > 0 && value.length < 5) {
+                return true;
             }
+            return 'Please enter text between 1-4 characters';
         },
-        {
-            type: 'input',
-            name: 'text',
-            message: 'Enter the text for your logo (up to 4 characters):',
-            validate(value) {
-                if (value.length > 0 && value.length < 5) {
-                    return true;
-                }
-                return 'Please enter text between 1-4 characters';
-            },
-        },
-        {
-            type: 'list',
-            name: 'color',
-            message: 'What color do you want your text to be?',
-            choices: [
-                'Lilac',
-                'Pale pink',
-                'Periwinkle',
-                'Pale yellow',
-                'Light blue',
-                'Navy',
-                'Cream',
-                'Peach',
-                'Sage green',
-                'Red',
-                'Purple',
-                'Bright pink',
-                'White',
-            ],
-            filter(val) {
-                array = val.split(" ").join("");
-                return array.toLowerCase();
-            }
-        },
-        {
-            type: 'list',
-            name: 'font',
-            message: 'What font do you want to use?',
-            choices: [
-                'Script',
-                'Handwriting',
-                'Serif',
-                'Sans serif',
-                'Typewriting',
-                'Monospace',
-            ]
-        })
-    // promises are chained to directly pass inquirer data into fetch request
-    .then((res) => fetch(`https://api.github.com/users/${res.username}`))
-    // promises are chained to parse the request for the json data
-    .then((res) => res.json())
-    // json data is accepted as user and logged to the console
-    .then((user) => console.log(user));
+    },
+    {
+        type: 'list',
+        name: 'color',
+        message: 'What color do you want your text to be?',
+        choices: [
+            'Lilac',
+            'Pale pink',
+            'Periwinkle',
+            'Pale yellow',
+            'Light blue',
+            'Navy',
+            'Cream',
+            'Peach',
+            'Sage green',
+            'Red',
+            'Purple',
+            'White',
+            'Orange'
+        ],
+        filter(val) {
+            array = val.split(" ").join("");
+            return array.toLowerCase();
+        }
+    },
+    {
+        type: 'list',
+        name: 'font',
+        message: 'What font do you want to use?',
+        choices: [
+            'Script',
+            'Handwriting',
+            'Serif',
+            'Sans serif',
+            'Typewriting',
+            'Monospace',
+        ]
+    }
+];
 
-const logo = new Circle()
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) =>
+        err ? console.log(err) : console.log('Successfully created your logo!'));
+}
+function renderShape(answers) {
+    return `This is a rendering of a ${answers.bgcolor} ${answers.shape} with ${answers.text} written inside of it in ${answers.color}`;
+}
+
+function init() {
+    inquirer
+        .prompt(questions)
+        .then((answers) => {
+            const logo = renderShape(answers);
+            writeToFile('logo.svg', logo);
+        })
+};
+
+init();
