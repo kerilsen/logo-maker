@@ -21,31 +21,33 @@
 - [Tests](#tests)
 - [Questions](#questions)
 
-  ## Installation
+## Installation
 
-  1. Clone the repository to your local machine from GitHub.
+1. Clone the repository to your local machine from GitHub.
 2. Using the command line on your terminal, type ``npm init -y`` from inside the root directory of the logo maker.
-  2. Type ``npm i`` to install the dependencies.
-  3. Type ``npm start`` to run the program.
+3. Type ``npm i`` to install the dependencies.
+4. Type ``npm start`` to run the program.
 
-  ## Usage
+## Usage
 
-  Simply respond to the questions provided by using arrow keys to go up and down to select from a list of options and then enter to submit an answer. 
+Please refer to the walkthrough video for usage:
+[Walkthrough](https://drive.google.com/file/d/1fsMNv4DHxsSj87yDgtr76NnPTMyMnb5P/view)
+Respond to the questions provided by using arrow keys to go up and down to select from a list of options and then enter to submit an answer.
 
-  ## Contributing
+## Contributing
 
-  Color codes from Palette Perfect by Lauren Wager.
+Color codes from Palette Perfect by Lauren Wager.
 
-  ## License
+## License
 
-  [License: MIT License](https://opensource.org/licenses/MIT)
+[License: MIT License](https://opensource.org/licenses/MIT)
 
-  ## Tests
+## Tests
 
-  JEST tests to come.
+Run ``npm test`` at the command line to run a suite of Jest tests.
 
-  ## Questions
+## Questions
 
-  If you have any questions about this project, please contact me at keri.l.sen@gmail.com.
+If you have any questions about this project, please contact me at keri.l.sen@gmail.com.
 
-  My GitHub profile is at: [https://github.com/kerilsen](https://github.com/kerilsen)
+My GitHub profile is at: [https://github.com/kerilsen](https://github.com/kerilsen)
