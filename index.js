@@ -1,22 +1,19 @@
-// import Shapes, { Triangle, Square, Circle, renderShape } from './lib/shapes.js';
-const inquirer = require('inquirer');
-const fs = require('fs');
- 
-// const render = require('./lib/shapes.js');
+import { renderShape } from './lib/shapes.js';
+import inquirer from 'inquirer';
+import fs from 'fs';
 
 const questions = [
     {
         type: 'list',
-        name: 'shape',
+        name: 'type',
         message: 'What shape do you want your logo to be?',
         choices: [
-            'Triangle ▲',
-            'Square ◼️',
-            'Circle ⏺',
+            'Triangle',
+            'Square',
+            'Circle',
         ],
         filter(val) {
-            string = val.slice(0, -2);
-            return string.toLowerCase();
+            return val.toLowerCase();
         }
     },
     {
@@ -39,19 +36,19 @@ const questions = [
             'Orange'
         ],
         filter(val) {
-            array = val.split(" ").join("");
+            let array = val.split(" ").join("");
             return array.toLowerCase();
         }
     },
     {
         type: 'input',
         name: 'text',
-        message: 'Enter the text for your logo (up to 4 characters):',
+        message: 'Enter the text for your logo (up to 3 characters):',
         validate(value) {
-            if (value.length > 0 && value.length < 5) {
+            if (value.length > 0 && value.length < 4) {
                 return true;
             }
-            return 'Please enter text between 1-4 characters';
+            return 'Please enter text between 1-3 characters';
         },
     },
     {
@@ -74,22 +71,9 @@ const questions = [
             'Orange'
         ],
         filter(val) {
-            array = val.split(" ").join("");
+            let array = val.split(" ").join("");
             return array.toLowerCase();
         }
-    },
-    {
-        type: 'list',
-        name: 'font',
-        message: 'What font do you want to use?',
-        choices: [
-            'Script',
-            'Handwriting',
-            'Serif',
-            'Sans serif',
-            'Typewriting',
-            'Monospace',
-        ]
     }
 ];
 
@@ -97,14 +81,12 @@ function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) =>
         err ? console.log(err) : console.log('Successfully created your logo!'));
 }
-function renderShape(answers) {
-    return `This is a rendering of a ${answers.bgcolor} ${answers.shape} with ${answers.text} written inside of it in ${answers.color}`;
-}
 
 function init() {
     inquirer
         .prompt(questions)
         .then((answers) => {
+            console.log(typeof answers);
             const logo = renderShape(answers);
             writeToFile('logo.svg', logo);
         })

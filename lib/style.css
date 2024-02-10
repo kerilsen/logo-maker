@@ -1,15 +1,15 @@
 :root {
-    --lilac: rgb(189,181,218);
-    --palepink: rgb(248,229,238);
-    --periwinkle: rgb(211,218,240);
-    --paleyellow: rgb(255,221,134);
-    --lightblue: rgb(218,235,243);
-    --navy: rgb(0,87,124);
-    --cream: rgb(254,244,238);
-    --peach: rgb(248,206,193);
-    --sagegreen: rgb(222,235,231);
---red: rgb();
---purple: rgb();
---white: rgb();
---orange: rgb();
+    --lilac: rgb(189, 181, 218);
+    --palepink: rgb(248, 229, 238);
+    --periwinkle: rgb(211, 218, 240);
+    --paleyellow: rgb(255, 221, 134);
+    --lightblue: rgb(218, 235, 243);
+    --navy: rgb(0, 87, 124);
+    --cream: rgb(254, 244, 238);
+    --peach: rgb(248, 206, 193);
+    --sagegreen: rgb(222, 235, 231);
+    --red: rgb(229, 36, 32);
+    --purple: rgb(206, 136, 186);
+    --white: rgb(251, 245, 248);
+    --orange: rgb(248, 174, 83);
 }
