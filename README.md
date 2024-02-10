@@ -1,16 +1,16 @@
 # Logo Maker
 
-  ## Description
+## Description
 
-  ![License: MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![License: MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-  GitHub repository: [https://github.com/kerilsen/logo-maker](https://github.com/kerilsen/logo-maker)
+GitHub repository: [https://github.com/kerilsen/logo-maker](https://github.com/kerilsen/logo-maker)
 
-  Deployed link: [https://kerilsen.github.io/logo-maker](https://kerilsen.github.io/logo-maker)
+Deployed link: [https://kerilsen.github.io/logo-maker](https://kerilsen.github.io/logo-maker)
 
-  This is a Node.js command-line application that accepts user input to generate a logo and saves it as an SVG file. The user is able to choose parameters such as color and shape as well as provide the text for the logo (up to 3 characters). It provides a quick way to generate a simple logo for projects. 
+This is a Node.js command-line application that accepts user input to generate a logo and saves it as an SVG file. The user is able to choose parameters such as color and shape as well as provide the text for the logo (up to 3 characters). It provides a quick way to generate a simple logo for projects. 
   
-  For future development, I would like to have more shape choices and customizable parameters such as font style and size.
+For future development, I would like to have more shape choices and customizable parameters such as font style and size.
 
 ## Table of Contents
 
@@ -32,6 +32,7 @@
 
 Please refer to the walkthrough video for usage:
 [Walkthrough](https://drive.google.com/file/d/1fsMNv4DHxsSj87yDgtr76NnPTMyMnb5P/view)
+
 Respond to the questions provided by using arrow keys to go up and down to select from a list of options and then enter to submit an answer.
 
 ## Contributing
