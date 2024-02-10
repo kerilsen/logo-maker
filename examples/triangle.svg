@@ -16,6 +16,6 @@
         --orange: rgb(248, 174, 83);
     }
     </style>
-  <circle r="100" cx="150" cy="100" fill="var(--navy)" />
-        <text x="150" y="125" font-size="80" text-anchor="middle" fill="var(--cream)">KLS</text>
+  <polygon points="150,0 250,200 50,200" fill="var(--navy)" />
+        <text x="150" y="150" font-size="50" text-anchor="middle" fill="var(--paleyellow)">DJM</text>
     </svg>
