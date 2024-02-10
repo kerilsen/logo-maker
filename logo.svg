@@ -1,1 +1,21 @@
-This is a rendering of a paleyellow square  with keri written inside of it in cream
+<svg width="300" height="200">
+    <style>
+    :root {
+        --lilac: rgb(189, 181, 218);
+        --palepink: rgb(248, 229, 238);
+        --periwinkle: rgb(211, 218, 240);
+        --paleyellow: rgb(255, 221, 134);
+        --lightblue: rgb(218, 235, 243);
+        --navy: rgb(0, 87, 124);
+        --cream: rgb(254, 244, 238);
+        --peach: rgb(248, 206, 193);
+        --sagegreen: rgb(222, 235, 231);
+        --red: rgb(229, 36, 32);
+        --purple: rgb(206, 136, 186);
+        --white: rgb(251, 245, 248);
+        --orange: rgb(248, 174, 83);
+    }
+    </style>
+  <circle class="circle" r="100" cx="150" cy="100" fill="var(--palepink)" />
+        <text x="150" y="130" font-size="80" text-anchor="middle" fill="var(--lightblue)">klm</text>
+    </svg>
