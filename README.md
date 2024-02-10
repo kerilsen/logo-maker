@@ -36,7 +36,8 @@ Respond to the questions provided by using arrow keys to go up and down to selec
 
 ## Contributing
 
-Color codes from Palette Perfect by Lauren Wager.
+Color codes from Palette Perfect by Lauren Wager
+Inquirer and Jest documentation
 
 ## License
 
